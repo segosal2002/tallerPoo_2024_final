@@ -6,7 +6,9 @@ package org.example.Vista;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import org.example.Controlador.Fechas;
 import org.example.Modelos.Cliente;
@@ -98,17 +100,52 @@ public class Panel extends javax.swing.JFrame {
       //recursos 
       Fechas fechas=new Fechas();
       Cliente cliente=new Cliente();
+      Mesa mesa=new Mesa();
+
+
         
-        
-        
+        //extraemos los datos
         Date fechaSeleccionada = jDateChooser1.getDate();
         String hora=Horas.getText();
 
-        if(fechas.esHoraValida(hora)){
-            Date horaParseada=fechas.parsearHoraStringToDate(hora);
-            Reserva reserva=new Reserva(fechaSeleccionada, horaParseada);
+        int indice=jComboBox1.getSelectedIndex();
+        switch(indice){
 
-            System.out.println(reserva.toString());
+            case 0:
+                mesa.setCapacidad(2);
+                break;
+            case 1:
+                mesa.setCapacidad(4);
+                break;
+            case 2:
+                mesa.setCapacidad(6);
+                break;
+
+            default:
+                mesa.setCapacidad(0);
+                break;
+
+
+
+        }
+
+        if(fechas.esHoraValida(hora)){
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+            LocalTime localTime = LocalTime.parse(hora, formatter);
+
+
+
+            LocalDate fechaLocal = fechaSeleccionada.toInstant()
+                    .atZone(ZoneId.systemDefault())
+                    .toLocalDate();
+
+
+            Reserva reserva = new Reserva(fechaLocal,localTime,mesa);
+
+
+            cliente.reservar(reserva);
+
+
 
 
         }else{

@@ -1,12 +1,15 @@
 package org.example.Modelos;
 
 import com.google.gson.*;
+import org.example.Controlador.Adaptadores;
 import org.example.Controlador.Utilidades;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.example.Controlador.Verificaciones;
@@ -177,7 +180,11 @@ public class Cliente {
     public void reservar(Reserva reserva){
     
         //recursos
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting()
+                .registerTypeAdapter(LocalDate.class, new Adaptadores.LocalDateAdapter())
+                .registerTypeAdapter(LocalTime.class, new Adaptadores.LocalTimeAdapter())
+                .create();
+
     Utilidades util = new Utilidades();
     String json = "";
    Reserva [] reservas = new Reserva[0];
@@ -200,18 +207,18 @@ public class Cliente {
     }
 
 
-   Reserva Reservanueva = new Reserva(reserva.getFecha(),reserva.getHora());
+   Reserva Reservanueva = new Reserva(reserva.getFecha(),reserva.getHora(),reserva.getMesa());
 
     List<Reserva> listaReserva = new ArrayList<>(List.of(Reservanueva));
  
     
         listaReserva.add(Reservanueva);
         try {
-            FileWriter writer = new FileWriter(util.rutaClientes());
+            FileWriter writer = new FileWriter(util.rutarReservas());
             gson.toJson(listaReserva, writer);
             writer.flush();
             writer.close();
-            System.out.println("Registro existoso de de la reserva " + correo );
+            System.out.println("Registro existoso de de la reserva " );
 
 
 
@@ -222,7 +229,10 @@ public class Cliente {
         
 }
    
+    public void cancelarReserva(){
 
+    }
+ 
 
 
 
