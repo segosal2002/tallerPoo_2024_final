@@ -11,6 +11,8 @@ public class Mesa {
         this.ubicacion = ubicacion;
     }
 
+    public Mesa(){}
+
     public boolean isDispobinilidad() {
         return dispobinilidad;
     }

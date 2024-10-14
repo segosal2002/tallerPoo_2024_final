@@ -5,8 +5,8 @@ import java.time.LocalTime;
 import java.util.Date;
 
 public class Reserva {
-    private Date fecha;
-    private Date hora;
+    private LocalDate fecha;
+    private LocalTime hora;
     private String concurrio;
     private String alergias;
     private Recepcionista recepcionista;
@@ -15,7 +15,7 @@ public class Reserva {
     private Empleado empleado;
     private Mesa mesa;
 
-    public Reserva(String alergias, String concurrio, Empleado empleado, Date fecha, Date hora, Horario horario, Mesa mesa, Recepcionista recepcionista, TarjetaCredito tarjetaCredito) {
+    public Reserva(String alergias, String concurrio, Empleado empleado, LocalDate fecha, LocalTime hora, Horario horario, Mesa mesa, Recepcionista recepcionista, TarjetaCredito tarjetaCredito) {
         this.alergias = alergias;
         this.concurrio = concurrio;
         this.empleado = empleado;
@@ -28,25 +28,25 @@ public class Reserva {
     }
     public Reserva(){
     }
-    public Reserva(Date fecha,Date hora,Mesa mesa){
+    public Reserva(LocalDate fecha,LocalTime hora,Mesa mesa){
             this.fecha=fecha;
             this.hora=hora;
             this.mesa=mesa;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 

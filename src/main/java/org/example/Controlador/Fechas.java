@@ -29,20 +29,5 @@ public class Fechas {
 
 
     }
-    public Date parsearHoraStringToDate(String hora) {
 
-
-        SimpleDateFormat sdfFechaHora = new SimpleDateFormat("HH:mm");
-
-        try {
-            Date fechaHora = sdfFechaHora.parse(hora);
-            return fechaHora;
-
-        } catch (Exception e) {
-            System.out.println("Error al parsear la fecha y hora: " + e.getMessage());
-        }
-
-
-         return null;
-    }
 }
