@@ -123,7 +123,12 @@ public class Cliente {
     public void Registrarse(String Nombre, String Correo, String NumTel, String Contrasenia, TipoSexo Sexo){
 
     //recursos
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    
+     Gson gson = new GsonBuilder().setPrettyPrinting()
+                .registerTypeAdapter(LocalDate.class, new Adaptadores.LocalDateAdapter())
+                .registerTypeAdapter(LocalTime.class, new Adaptadores.LocalTimeAdapter())
+                .create();
+    
         Utilidades util = new Utilidades();
     String json = "";
     Cliente[] clientes = new Cliente[0];
@@ -157,7 +162,7 @@ public class Cliente {
             gson.toJson(listaClientes, writer);
             writer.flush();
             writer.close();
-            System.out.println("Registro exitoso del usuario: " + correo );
+            System.out.println("Registro exitoso del usuario: " + Correo );
 
 
 

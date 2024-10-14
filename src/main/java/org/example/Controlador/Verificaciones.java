@@ -8,6 +8,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.example.Modelos.Cliente;
@@ -37,7 +39,10 @@ public class Verificaciones {
         
         
        
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+         Gson gson = new GsonBuilder().setPrettyPrinting()
+                .registerTypeAdapter(LocalDate.class, new Adaptadores.LocalDateAdapter())
+                .registerTypeAdapter(LocalTime.class, new Adaptadores.LocalTimeAdapter())
+                .create();
          String json = "";      
         //metodo
         try {
