@@ -104,8 +104,8 @@ public class InciarSesion extends javax.swing.JFrame {
         
         //recursos
         Verificaciones verificacion=new Verificaciones();
-        
-        
+        PanelUsuario panelUsuario=new PanelUsuario();
+            
         
         
         //Extraemos los datos del formulario
@@ -114,10 +114,10 @@ public class InciarSesion extends javax.swing.JFrame {
       String correo=Correo.getText();
       String contrasenia=Contrasenia.getText();
       Cliente cliente=new Cliente(correo,contrasenia);
-     Panel Panel=new Panel();    
+       
      if(verificacion.VerificacionInciarSesion(cliente)){
      
-         Panel.setVisible(true);
+         panelUsuario.setVisible(true);
          this.dispose();
      
      
