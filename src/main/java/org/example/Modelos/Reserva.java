@@ -12,13 +12,13 @@ public class Reserva {
     private Recepcionista recepcionista;
     private TarjetaCredito tarjetaCredito;
     private  Horario horario;
-    private Empleado empleado;
+    private Cliente cliente;
     private Mesa mesa;
 
-    public Reserva(String alergias, String concurrio, Empleado empleado, LocalDate fecha, LocalTime hora, Horario horario, Mesa mesa, Recepcionista recepcionista, TarjetaCredito tarjetaCredito) {
+    public Reserva(String alergias, String concurrio, Cliente cliente , LocalDate fecha, LocalTime hora, Horario horario, Mesa mesa, Recepcionista recepcionista, TarjetaCredito tarjetaCredito) {
         this.alergias = alergias;
         this.concurrio = concurrio;
-        this.empleado = empleado;
+        this.cliente= cliente ;
         this.fecha = fecha;
         this.hora = hora;
         this.horario = horario;
@@ -90,12 +90,12 @@ public class Reserva {
         this.horario = horario;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Mesa getMesa() {
