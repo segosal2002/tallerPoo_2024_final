@@ -14,16 +14,63 @@ import java.util.ArrayList;
 import java.util.List;
 import org.example.Controlador.Verificaciones;
 
+/**
+ * Esta clase representa al cliente del restaurante.
+ */
 public class Cliente {
+
+    /**
+     * El nombre del cliente.
+     */
     private String nombre;
+
+    /**
+     * El correo electrónico del cliente.
+     *
+     */
     private String correo;
+
+    /**
+     * El número de teléfono del cliente.
+     */
     private String numTel;
+
+    /**
+     * La contraseña de la cuenta del cliente.
+     */
     private String contrasenia;
+    /**
+     * Sexo del cliente.
+     */
     private TipoSexo sexo;
+
+    /**
+     * Queja que emite el cliente.
+     */
     private String queja;
+
+    /**
+     * El recepcionista por el que es atendido el cliente.
+     */
     private Recepcionista recepcionista;
+
+    /**
+     * El maitre por el que es atendido el cliente.
+     */
     private Maitre maitre;
 
+
+    /**
+     * Primer constructor de la clase Cliente. Este sirve para la creación de su usuario.
+     * @param contrasenia
+     * @param correo
+     * @param maitre
+     * @param nombre
+     * @param numTel
+     * @param queja
+     * @param recepcionista
+     * @param sexo
+     */
     public Cliente(String contrasenia, String correo, Maitre maitre, String nombre, String numTel, String queja, Recepcionista recepcionista, TipoSexo sexo) {
         this.contrasenia = contrasenia;
         this.correo = correo;
@@ -34,7 +81,12 @@ public class Cliente {
         this.recepcionista = recepcionista;
         this.sexo = sexo;
     }
-    
+
+    /**
+     * Segundo constructor de la clase Cliente. Este funciona para el inicio de sesión.
+     * @param Correo
+     * @param Contrasenia
+     */
     public Cliente(String Correo,String Contrasenia){
        this.contrasenia=Contrasenia;
        this.correo=Correo;
