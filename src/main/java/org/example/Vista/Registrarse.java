@@ -4,6 +4,8 @@
  */
 package org.example.Vista;
 
+import javax.swing.JOptionPane;
+import org.example.Controlador.Verificaciones;
 import org.example.Modelos.Cliente;
 import org.example.Modelos.TipoSexo;
 
@@ -58,8 +60,24 @@ public class Registrarse extends javax.swing.JFrame {
                 nombreActionPerformed(evt);
             }
         });
+        nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombreKeyTyped(evt);
+            }
+        });
 
         jLabel3.setText("Correo");
+
+        numeroTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numeroTelActionPerformed(evt);
+            }
+        });
+        numeroTel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numeroTelKeyTyped(evt);
+            }
+        });
 
         jLabel4.setText("Numero Telfono");
 
@@ -148,6 +166,7 @@ public class Registrarse extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
       //recursos
       TipoSexo sexo;
+      Verificaciones veri=new Verificaciones();
      
       //Extraemos las variables del panel de registrarse
       String Nombre=nombre.getText();
@@ -155,6 +174,17 @@ public class Registrarse extends javax.swing.JFrame {
       String NumTel=numeroTel.getText();
       String Contrasenia=contrasenia.getText();
      int tipoSexo=jComboBox1.getSelectedIndex();
+     
+     
+     if(jButton1.isEnabled() && Nombre.isBlank() || Correo.isBlank() || NumTel.isBlank() || Contrasenia.isBlank()  ){
+      
+      
+        JOptionPane.showMessageDialog(null, "Error campos vacios", "Mensaje", JOptionPane.ERROR_MESSAGE);
+      
+      
+      }
+     
+     else if (veri.ValidarCorreo(Correo)){
     
      switch (tipoSexo){
      
@@ -188,9 +218,10 @@ public class Registrarse extends javax.swing.JFrame {
          cliente.Registrarse(Nombre, Correo, NumTel, Contrasenia, sexo);
 
      
+        JOptionPane.showMessageDialog(null, "Registrado con exito, inicie sesion porfavor", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
      
-     
-     
+}
      
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -200,6 +231,27 @@ public class Registrarse extends javax.swing.JFrame {
        this.dispose();
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void numeroTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroTelKeyTyped
+       char c = evt.getKeyChar();
+if (!Character.isDigit(c)) {
+    evt.consume(); 
+}
+           
+       
+      
+       
+    }//GEN-LAST:event_numeroTelKeyTyped
+
+    private void nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyTyped
+         char c=evt.getKeyChar();
+       
+       if(c<'0' || c < '9') evt.consume();
+    }//GEN-LAST:event_nombreKeyTyped
+
+    private void numeroTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroTelActionPerformed
 
     /**
      * @param args the command line arguments

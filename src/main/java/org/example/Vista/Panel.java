@@ -20,14 +20,25 @@ import org.example.Modelos.Reserva;
  * @author vic
  */
 public class Panel extends javax.swing.JFrame {
-
+private Cliente cliente1;
     /**
      * Creates new form Panel
      */
     public Panel() {
+
         initComponents();
         jDateChooser1.setMinSelectableDate(new Date());
     }
+    public Panel(Cliente cliente1) {
+        this.cliente1 = cliente1;
+        initComponents();
+        jDateChooser1.setMinSelectableDate(new Date());
+    }
+
+
+
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -110,16 +121,18 @@ public class Panel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      //recursos 
+      //recursos
       Fechas fechas=new Fechas();
       Cliente cliente=new Cliente();
       Mesa mesa=new Mesa();
+
 
 
         
         //extraemos los datos
         Date fechaSeleccionada = jDateChooser1.getDate();
         String hora=Horas.getText();
+
 
         int indice=jComboBox1.getSelectedIndex();
         switch(indice){
@@ -143,6 +156,8 @@ public class Panel extends javax.swing.JFrame {
         }
 
         if(fechas.esHoraValida(hora)){
+
+           //formateamos la hora
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
             LocalTime localTime = LocalTime.parse(hora, formatter);
 
@@ -153,8 +168,7 @@ public class Panel extends javax.swing.JFrame {
                     .toLocalDate();
 
 
-            Reserva reserva = new Reserva(fechaLocal,localTime,mesa);
-
+            Reserva reserva = new Reserva(fechaLocal,localTime,mesa,cliente1);
 
             cliente.reservar(reserva);
 
@@ -166,14 +180,6 @@ public class Panel extends javax.swing.JFrame {
             System.out.println("Error al colocar la fecha");
         }
 
-
-
-
-
-
-
-
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void HorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HorasActionPerformed
@@ -183,6 +189,7 @@ public class Panel extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        PanelUsuario panelusuario=new PanelUsuario();
        panelusuario.setVisible(true);
+       
        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -226,6 +233,6 @@ public class Panel extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;}
     // End of variables declaration//GEN-END:variables
 

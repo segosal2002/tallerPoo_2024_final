@@ -12,7 +12,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.example.Modelos.Cliente;
+import org.example.Modelos.Empleado;
 
 /**
  *
@@ -31,14 +34,25 @@ public class Verificaciones {
         return false;
     }
 
-    
+    public boolean verificacionRepetidosEmpleados(List<Empleado> listaEmpleados, Empleado EmpleadoNuevo) {
+
+        for (Empleado empleado : listaEmpleados) {
+            if (empleado.getUsuario().equals(EmpleadoNuevo.getUsuario())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
     //Con este metodo nos fijamos en el json si esta registrado el usuario
     public boolean VerificacionInciarSesion(Cliente cliente) {
         //recursos
         Utilidades util = new Utilidades();
         
         
-       
+
          Gson gson = new GsonBuilder().setPrettyPrinting()
                 .registerTypeAdapter(LocalDate.class, new Adaptadores.LocalDateAdapter())
                 .registerTypeAdapter(LocalTime.class, new Adaptadores.LocalTimeAdapter())
@@ -71,6 +85,18 @@ public class Verificaciones {
             
             
 
+    }
+    
+    
+    public boolean ValidarCorreo(String correo){
+    String email="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+    Pattern pattern = Pattern.compile(email);
+        
+    
+    Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
+    
+    
     }
 
    

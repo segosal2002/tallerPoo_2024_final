@@ -4,8 +4,12 @@
  */
 package org.example.Vista;
 
+import jdk.jshell.execution.Util;
+import org.example.Controlador.Utilidades;
 import org.example.Controlador.Verificaciones;
+import org.example.Modelos.Admin;
 import org.example.Modelos.Cliente;
+import org.example.Modelos.Empleado;
 
 /**
  *
@@ -66,24 +70,24 @@ public class InciarSesion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(244, 244, 244)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(240, Short.MAX_VALUE))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2)))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(19, 19, 19)
                 .addComponent(jButton2)
-                .addGap(69, 69, 69)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -93,19 +97,18 @@ public class InciarSesion extends javax.swing.JFrame {
                 .addComponent(Contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(jButton1)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
         
         //recursos
         Verificaciones verificacion=new Verificaciones();
-        PanelUsuario panelUsuario=new PanelUsuario();
-            
+        Utilidades util=new Utilidades();
         
         
         //Extraemos los datos del formulario
@@ -113,25 +116,51 @@ public class InciarSesion extends javax.swing.JFrame {
         
       String correo=Correo.getText();
       String contrasenia=Contrasenia.getText();
-      Cliente cliente=new Cliente(correo,contrasenia);
-       
-     if(verificacion.VerificacionInciarSesion(cliente)){
-     
-         panelUsuario.setVisible(true);
-         this.dispose();
-     
-     
-     }else{
-     System.out.println("Pruebe con otros datos, o registrarse");
-     }
-     
       
-      
+      //creamos el objecto cliente
+        Cliente cliente=new Cliente(correo,contrasenia);
+        
+        
+        
+        
+       //para pasarle el dato a la reserva
+        Cliente cliente1=new Cliente(correo);
+        PanelUsuario panelUsuario=new PanelUsuario(cliente1);
+        Admin admin=new Admin();
+        
+        
+
+
+        if(admin.inciarSesion(util.listaEmpleados(),correo,contrasenia)){
+            PanelAdmin panelAdmin = new PanelAdmin();
+            panelAdmin.setVisible(true);
+            this.dispose();
+        }
+        if(verificacion.VerificacionInciarSesion(cliente)){
+
+            panelUsuario.setVisible(true);
+            panelUsuario.setDatos(correo);
+            this.dispose();
+        }
+        else {
+            System.out.println("Pruebe con otros datos, o registrarse");
+        }
+
+
+
+
+
+
+
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Registrarse registrarse=new Registrarse();
         registrarse.setVisible(true);
+       
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

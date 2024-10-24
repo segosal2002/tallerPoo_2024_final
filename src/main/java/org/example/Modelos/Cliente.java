@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.example.Controlador.Verificaciones;
 
@@ -40,6 +41,10 @@ public class Cliente {
        this.correo=Correo;
     
     
+    }
+
+    public Cliente (String correo){
+        this.correo=correo;
     }
 
    
@@ -180,8 +185,6 @@ public class Cliente {
 
 
 }
-
-
     public void reservar(Reserva reserva){
     
         //recursos
@@ -212,12 +215,10 @@ public class Cliente {
     }
 
 
-   Reserva Reservanueva = new Reserva(reserva.getFecha(),reserva.getHora(),reserva.getMesa());
-
-    List<Reserva> listaReserva = new ArrayList<>(List.of(Reservanueva));
- 
-    
+   Reserva Reservanueva = new Reserva(reserva.getFecha(),reserva.getHora(),reserva.getMesa(),reserva.getCliente());
+        List<Reserva> listaReserva = new ArrayList<>(Arrays.asList(reservas));
         listaReserva.add(Reservanueva);
+
         try {
             FileWriter writer = new FileWriter(util.rutarReservas());
             gson.toJson(listaReserva, writer);
@@ -233,12 +234,24 @@ public class Cliente {
         
         
 }
-   
-    public void cancelarReserva(){
 
+
+
+
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "contrasenia='" + contrasenia + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", numTel='" + numTel + '\'' +
+                ", sexo=" + sexo +
+                ", queja='" + queja + '\'' +
+                ", recepcionista=" + recepcionista +
+                ", maitre=" + maitre +
+                '}';
     }
-
-
 
 
 
