@@ -1,9 +1,30 @@
 [
   {
-    "nombre": "cava",
-    "correo": "cava",
-    "numTel": "cava",
-    "contrasenia": "cava",
+    "nombre": "Santiago",
+    "correo": "Santiago.cavalanti12@gmail.com",
+    "numTel": "123124",
+    "contrasenia": "123",
+    "sexo": "Masculino"
+  },
+  {
+    "nombre": "Fernando",
+    "correo": "Santiago.cavalanti12@gmail.com",
+    "numTel": "213123",
+    "contrasenia": "123",
+    "sexo": "Femenino"
+  },
+  {
+    "nombre": "Cavalanti",
+    "correo": "Santiaguito12@gmail.com",
+    "numTel": "123123",
+    "contrasenia": "123",
+    "sexo": "Masculino"
+  },
+  {
+    "nombre": "Santiago",
+    "correo": "Santiago.cavalanti@gmail.com",
+    "numTel": "3454343302",
+    "contrasenia": "123",
     "sexo": "Masculino"
   }
 ]

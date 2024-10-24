@@ -8,6 +8,12 @@ public class Maitre extends Empleado  {
         this.cliente = cliente;
     }
 
+    public Maitre(String contrasenia, Rol rol, String usuario) {
+        super(contrasenia,rol,usuario);
+
+    }
+
+
     public Cliente getCliente() {
         return cliente;
     }

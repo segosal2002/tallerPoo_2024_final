@@ -28,8 +28,16 @@ public class Reserva {
     }
     public Reserva(){
     }
-    public Reserva(LocalDate fecha,LocalTime hora,Mesa mesa){
+    public Reserva(LocalDate fecha,LocalTime hora,Mesa mesa,Cliente cliente){
             this.fecha=fecha;
+            this.hora=hora;
+            this.mesa=mesa;
+            this.cliente=cliente;
+
+    }
+    
+    public Reserva(LocalDate fecha,LocalTime hora,Mesa mesa){
+         this.fecha=fecha;
             this.hora=hora;
             this.mesa=mesa;
     }
@@ -104,5 +112,20 @@ public class Reserva {
 
     public void setMesa(Mesa mesa) {
         this.mesa = mesa;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "alergias='" + alergias + '\'' +
+                ", fecha=" + fecha +
+                ", hora=" + hora +
+                ", concurrio='" + concurrio + '\'' +
+                ", recepcionista=" + recepcionista +
+                ", tarjetaCredito=" + tarjetaCredito +
+                ", horario=" + horario +
+                ", cliente=" + cliente +
+                ", mesa=" + mesa +
+                '}';
     }
 }

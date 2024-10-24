@@ -14,6 +14,9 @@ public class Rol {
         this.nombreRol = nombreRol;
     }
 
+
+    public Rol(){}
+
     public String getNombreRol() {
         return nombreRol;
     }
@@ -36,5 +39,12 @@ public class Rol {
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
+    }
+
+    @Override
+    public String toString() {
+       return nombreRol;
+                
+               
     }
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "usuario": "cava",
+    "Contrasenia": "cava",
+    "rol": {
+      "nombreRol": "Admnistrador",
+      "descripcionRol": "Administra el sistema",
+      "empleado": {
+        "usuario": "cava",
+        "Contrasenia": "cava"
+      }
+    }
+  },
+  {
+    "usuario": "cava1",
+    "Contrasenia": "cava",
+    "rol": {
+      "nombreRol": "Admnistrador",
+      "descripcionRol": "Administra el sistema",
+      "empleado": {
+        "usuario": "cava1",
+        "Contrasenia": "cava"
+      }
+    }
+  },
+  {
+    "usuario": "cavass",
+    "Contrasenia": "cava",
+    "rol": {
+      "nombreRol": "Maitres",
+      "descripcionRol": "Levantar quejas",
+      "empleado": {
+        "usuario": "cavass",
+        "Contrasenia": "cava"
+      }
+    }
+  }
+]

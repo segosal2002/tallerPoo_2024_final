@@ -1,18 +1,13 @@
 [
   {
-    "fecha": "2024-10-19",
-    "hora": "21:00:00",
+    "fecha": "2024-10-30",
+    "hora": "17:00:00",
+    "cliente": {
+      "correo": "fernando@gmail.com"
+    },
     "mesa": {
       "dispobinilidad": false,
-      "capacidad": 4
-    }
-  },
-  {
-    "fecha": "2024-10-19",
-    "hora": "21:00:00",
-    "mesa": {
-      "dispobinilidad": false,
-      "capacidad": 4
+      "capacidad": 6
     }
   }
 ]
