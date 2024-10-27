@@ -19,22 +19,12 @@ import org.example.Modelos.Empleado;
 
 /**
  *
- * @author Cava:
- *
- * Con esta clase Verificamos los archivos json o validamos correos
+ * @author vic
  */
 public class Verificaciones {
-
-
-    /**
-     *
-     *
-     *
-     * Con este metodo verificamos si esta repetido el usuario a la hora de registrarse
-     * @param clienteNuevo El cliente nuevo a verificar si esta repetido
-     *                     @return un booleano True si esta en el json y False si no esta
-     *
-     */
+ 
+    
+    //Con este metodo verificamos si esta repetido el usuario a la hora de registrarse.
     public Boolean verificacionRepetidosRegistrar(List<Cliente> listaClientes, Cliente clienteNuevo) {
         for (Cliente cliente : listaClientes) {
             if (cliente.getCorreo().equals(clienteNuevo.getCorreo())) {
@@ -43,13 +33,7 @@ public class Verificaciones {
         }
         return false;
     }
-    /**
-     * Verifica si un empleado nuevo ya está registrado en la lista de empleados.
-     *
-     * @param listaEmpleados La lista de empleados existentes.
-     * @param EmpleadoNuevo  El nuevo empleado que se desea verificar.
-     * @return true si el empleado ya existe en la lista, false en caso contrario.
-     */
+
     public boolean verificacionRepetidosEmpleados(List<Empleado> listaEmpleados, Empleado EmpleadoNuevo) {
 
         for (Empleado empleado : listaEmpleados) {
@@ -62,12 +46,7 @@ public class Verificaciones {
 
 
 
-    /**
-     * Verifica si un cliente tiene una cuenta registrada en el archivo JSON para iniciar sesión.
-     *
-     * @param cliente El cliente que desea iniciar sesión, con los datos de correo y contraseña.
-     * @return true si el cliente existe en el archivo y la contraseña coincide, false en caso contrario.
-     */
+    //Con este metodo nos fijamos en el json si esta registrado el usuario
     public boolean VerificacionInciarSesion(Cliente cliente) {
         //recursos
         Utilidades util = new Utilidades();
@@ -107,12 +86,7 @@ public class Verificaciones {
             
 
     }
-    /**
-     * Valida si el correo electrónico ingresado cumple con el formato correcto.
-     *
-     * @param correo El correo electrónico a validar.
-     * @return true si el correo cumple con el formato correcto, false en caso contrario.
-     */
+    
     
     public boolean ValidarCorreo(String correo){
     String email="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";

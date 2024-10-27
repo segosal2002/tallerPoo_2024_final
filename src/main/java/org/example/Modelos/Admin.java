@@ -14,10 +14,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/**
- * La clase  Admin extiende la clase Empleado y representa un administrador
- * de un restaurante, que tiene la capacidad de gestionar empleados, reservas y horarios.
- */
+
 public class Admin  extends  Empleado{
  private Restaurante restaurante;
 
@@ -37,11 +34,7 @@ public class Admin  extends  Empleado{
     public void setRestaurante(Restaurante restaurante) {
         this.restaurante = restaurante;
     }
-    /**
-     * Crea una nueva cuenta de empleado en el sistema y la registra en el archivo JSON correspondiente.
-     *
-     * @param empleado El empleado a ser registrado.
-     */
+
     public void CrearCuenta(Empleado empleado){
         //recursos
         Gson gson = new GsonBuilder().setPrettyPrinting()
@@ -99,24 +92,12 @@ public class Admin  extends  Empleado{
 
 
     }
-    /**
-     * Inicia sesión como administrador mediante verificación de correo y contraseña.
-     *
-     * @param empleados  Lista de empleados en el sistema.
-     * @param correo     El correo electrónico del administrador.
-     * @param contrasenia La contraseña del administrador.
-     * @return  true si las credenciales son correctas,  false en caso contrario.
-     */
 
     @Override
     public boolean inciarSesion(List<Empleado> empleados, String correo, String contrasenia) {
         return super.inciarSesion(empleados, correo, contrasenia);
     }
-    /**
-     * Crea y registra un evento privado en el sistema.
-     *
-     * @param reserva Los detalles de la reserva a crear.
-     */
+
     public void setEventoPrivado(Reserva reserva){
 
         Gson gson = new GsonBuilder().setPrettyPrinting()
@@ -173,11 +154,7 @@ public class Admin  extends  Empleado{
         
    
    }
-    /**
-     * Establece el horario de apertura y cierre del restaurante.
-     *
-     * @param horario El horario a establecer.
-     */
+
    public void SetApertura(Horario horario){
 
 

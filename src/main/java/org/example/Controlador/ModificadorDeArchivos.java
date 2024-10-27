@@ -22,15 +22,13 @@ public class ModificadorDeArchivos {
 
     /**
      *
-     * @param cliente    El cliente a modificar, identificado por su correo electrónico actual.
-     * @param correo     El nuevo correo electrónico del cliente.
-     * @param contrasenia La nueva contraseña del cliente.
-     * @param numTelf    El nuevo número de teléfono del cliente.
+     * @param cliente 
+     * @param correo
+     * @param contrasenia
+     * @param numTelf
      *
      *
-     */
-
-
+     * */
     public void ModificarArchivoCliente(Cliente cliente, String correo, String contrasenia, String numTelf) {
 
 
