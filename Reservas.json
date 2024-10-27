@@ -1,5 +1,16 @@
 [
   {
+
+    "fecha": "2024-10-29",
+    "hora": "20:00:00",
+    "cliente": {
+      "correo": "Cavalanti@gmail.com"
+    },
+    "mesa": {
+      "dispobinilidad": false,
+      "capacidad": 6,
+      "ubicacion": "Afuera"
+
     "fecha": "2024-10-31",
     "hora": "11:00:00",
     "cliente": {
@@ -24,6 +35,7 @@
       "dispobinilidad": false,
       "capacidad": 0,
       "ubicacion": "Terraza"
+
     }
   }
 ]

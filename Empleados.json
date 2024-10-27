@@ -1,5 +1,16 @@
 [
   {
+
+    "usuario": "cava1",
+    "Contrasenia": "123",
+    "rol": {
+      "nombreRol": "Admnistrador",
+      "descripcionRol": "Administra el sistema",
+      "empleado": {
+        "usuario": "cava1",
+        "Contrasenia": "123"
+      }
+
     "fecha": "2024-10-31",
     "hora": "11:00:00",
     "cliente": {
@@ -9,6 +20,7 @@
       "dispobinilidad": false,
       "capacidad": 4,
       "ubicacion": "Terraza"
+
     }
   }
 ]
