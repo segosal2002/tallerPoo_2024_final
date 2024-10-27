@@ -26,5 +26,12 @@
     "numTel": "3454343302",
     "contrasenia": "123",
     "sexo": "Masculino"
+  },
+  {
+    "nombre": "Santiago",
+    "correo": "Cavalanti@gmail.com",
+    "numTel": "343434",
+    "contrasenia": "123",
+    "sexo": "Masculino"
   }
 ]

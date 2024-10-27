@@ -145,4 +145,64 @@ public class Admin  extends  Empleado{
 
 
     }
+    
+   public void cancelarEvento(Reserva reserva){
+
+
+
+        
+   
+   }
+
+   public void SetApertura(Horario horario){
+
+
+       Gson gson = new GsonBuilder().setPrettyPrinting()
+               .registerTypeAdapter(LocalDate.class, new Adaptadores.LocalDateAdapter())
+               .registerTypeAdapter(LocalTime.class, new Adaptadores.LocalTimeAdapter())
+               .create();
+
+
+       Utilidades util = new Utilidades();
+       String json = "";
+       Horario [] Horarios = new Horario[0];
+
+
+       //metodo
+       try {
+           BufferedReader br = new BufferedReader(new FileReader("AperturaCierre.json"));
+           String linea = "";
+           while ((linea = br.readLine()) != null) {
+               json += linea;
+           }
+           br.close();
+
+           if (!json.isEmpty()) {
+              Horarios = gson.fromJson(json,Horario[].class);
+           }
+       } catch (Exception e) {
+           System.out.println("Error al cargar admin.EventoPrivado " + e.getMessage());
+       }
+
+      Horario nuevoHorario=new Horario(horario.getHoraInicio(),horario.getHoraFinal(),horario.getDia());
+
+       List<Horario> ListaHorario= new ArrayList<>(Arrays.asList(Horarios));
+       ListaHorario.add(nuevoHorario);
+
+       try {
+           FileWriter writer = new FileWriter("AperturaCierre.json");
+           gson.toJson(ListaHorario, writer);
+           writer.flush();
+           writer.close();
+           System.out.println("Registro existoso de admin.EstablecerHorario");
+
+       } catch (Exception e) {
+           System.out.println("Error al registrar admin.EstablecerHorario" + e.getMessage());
+       }
+
+
+
+
+
+   }
 }

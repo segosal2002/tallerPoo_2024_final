@@ -137,17 +137,7 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva{" +
-                "alergias='" + alergias + '\'' +
-                ", fecha=" + fecha +
-                ", hora=" + hora +
-                ", concurrio='" + concurrio + '\'' +
-                ", recepcionista=" + recepcionista +
-                ", tarjetaCredito=" + tarjetaCredito +
-                ", horario=" + horario +
-                ", cliente=" + cliente +
-                ", mesa=" + mesa +
-                '}';
+        return cliente.getCorreo();
     }
 
 }

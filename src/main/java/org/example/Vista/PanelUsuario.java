@@ -138,7 +138,8 @@ private String dato;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      
+      ReservaCliente Rs=new ReservaCliente(this.cliente);
+      Rs.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

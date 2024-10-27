@@ -16,9 +16,18 @@ import java.util.Date;
 
 /**
  *
- * @author TheCa
+ * @author Cavaa
+ * La clase Fechas manipula los tipos de fechas y lo devuelve en localDate o LocalTime, tambien verifica si tiene es una
+ * hora valida a partir de un String.
  */
 public class Fechas {
+
+
+
+    /**
+     @param hora String pasado para verificar que sea una hora valida.
+     @return Retorna True si es un formato de hora valido.
+     */
      public boolean esHoraValida(String hora) {
        
         DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm");
@@ -34,7 +43,10 @@ public class Fechas {
 
     }
 
-
+    /**
+     @param  fecha parsea una fecha Date a un LocalDate
+     @return retorna el date en formato LocalDate
+     */
     public LocalDate ParseadorDateAFecha(Date fecha) {
 
         if (fecha == null) {
@@ -47,7 +59,10 @@ public class Fechas {
 
         return localDate;
     }
-
+    /**
+     @param  tiempo parsea un String hora a un LocalTime
+     @return retorna el String en LocalTime
+     */
 
     public LocalTime parsearStringALocalTime(String tiempo) {
 

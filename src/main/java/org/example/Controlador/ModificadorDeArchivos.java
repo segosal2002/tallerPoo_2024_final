@@ -14,11 +14,21 @@ import org.example.Modelos.Cliente;
 
 /**
  *
- * @author TheCa
- */
+ * @author Cava:
+ * Clase que lleva el rol de metodos que llevan a la modificacion de archivos jsons
+ *
+ * */
 public class ModificadorDeArchivos {
 
-
+    /**
+     *
+     * @param cliente 
+     * @param correo
+     * @param contrasenia
+     * @param numTelf
+     *
+     *
+     * */
     public void ModificarArchivoCliente(Cliente cliente, String correo, String contrasenia, String numTelf) {
 
 
