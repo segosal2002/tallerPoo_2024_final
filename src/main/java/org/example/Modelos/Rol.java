@@ -2,7 +2,11 @@ package org.example.Modelos;
 
 
 import java.util.ArrayList;
-
+/**
+ * La clase Rol representa un rol específico asignado a un empleado dentro del sistema.
+ * Cada rol tiene un nombre y una descripción que proporcionan información sobre las responsabilidades
+ * y funciones asociadas con ese rol.
+ */
 public class Rol {
     private  String nombreRol;
     private String descripcionRol;

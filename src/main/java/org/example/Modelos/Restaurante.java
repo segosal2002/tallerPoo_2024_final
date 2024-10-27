@@ -1,15 +1,16 @@
 package org.example.Modelos;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import org.example.Controlador.Adaptadores;
+
 import org.example.Controlador.Utilidades;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * La clase Restaurante representa un restaurante que gestiona una lista de administradores
+ * y su horario de operación. Proporciona métodos para consultar la disponibilidad de mesas
+ * en base a las reservas existentes.
+ */
 public class Restaurante {
 private ArrayList<Admin>admins;
 private Horario horario;

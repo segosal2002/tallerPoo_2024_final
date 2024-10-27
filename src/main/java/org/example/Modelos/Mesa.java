@@ -1,5 +1,8 @@
 package org.example.Modelos;
-
+/**
+ * La clase Mesa representa una mesa en un restaurante, con atributos de disponibilidad,
+ * capacidad y ubicación.
+ */
 public class Mesa {
     private  boolean dispobinilidad;
     private int capacidad;
