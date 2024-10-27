@@ -17,21 +17,39 @@ import org.example.Modelos.Reserva;
 
 public class Utilidades {
 
-
+    /**
+     * Obtiene la ruta del archivo JSON de empleados.
+     *
+     * @return La ruta del archivo "Empleados.json".
+     */
     public String RutaEmpleados() {
         return "Empleados.json";
     }
-
+    /**
+     * Obtiene la ruta del archivo JSON de clientes.
+     *
+     * @return La ruta del archivo "Clientes.json".
+     */
     public String rutaClientes() {
 
         return "Clientes.json";
     }
 
+    /**
+     * Obtiene la ruta del archivo JSON de reservas.
+     *
+     * @return La ruta del archivo "Reservas.json".
+     */
     public String rutarReservas() {
 
         return "Reservas.json";
     }
-    
+
+    /**
+     *
+     *
+     * @return Una lista de objetos Cliente leídos del archivo "Clientes.json".
+     */
     public List<Cliente> ListaClientes(){
     
     Utilidades utilidades = new Utilidades();
@@ -68,6 +86,12 @@ public class Utilidades {
     
     }
 
+    /**
+     * Carga y devuelve el contenido JSON de reservas como un String.
+     *
+     * @return Una cadena JSON que representa las reservas leídas del archivo "Reservas.json".
+     */
+
     public String listaReservas() {
         String linea = "";
         String json = "";
@@ -89,7 +113,10 @@ public class Utilidades {
         return json;
 
     }
-
+    /**
+     *
+     * @return Una lista de objetos Empleado leídos del archivo "Empleados.json".
+     */
     public List<Empleado> listaEmpleados() {
         Utilidades utilidades = new Utilidades();
         Gson gson = new GsonBuilder().setPrettyPrinting()
@@ -121,7 +148,11 @@ public class Utilidades {
         List<Empleado> empleados = Arrays.asList(empleadosArray);
         return empleados;
     }
-
+    /**
+     * Carga y devuelve una lista de reservas desde el archivo JSON de reservas.
+     *
+     * @return Una lista de objetos Reserva leídos del archivo "Reservas.json".
+     */
 
     public List<Reserva>  listaReservasS(){
 
