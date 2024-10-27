@@ -3,6 +3,8 @@ package org.example.Modelos;
  * Clase que representa un empleado.
  */
 
+import java.util.List;
+
 public class Empleado {
     /**
      * El nombre del usuario.
@@ -32,10 +34,39 @@ public class Empleado {
         this.usuario = usuario;
     }
 
+
     /**
      * Obtiene el nombre del usuario.
      * @return El nombre del usuario.
      */
+
+    public Empleado(String usuario,String contrasenia){
+        this.Contrasenia = contrasenia;
+        this.usuario = usuario;
+
+
+    }
+
+    public Empleado() {
+
+    }
+
+    public boolean inciarSesion(List<Empleado> empleados,String correo,String contrasenia){
+
+        for(Empleado empleado : empleados){
+            if(empleado.getUsuario().equals(correo)&&empleado.getContrasenia().equals(contrasenia)){
+
+                return  true;
+            }
+
+
+        }
+        return false;
+
+
+    }
+
+
     public String getUsuario() {
         return usuario;
     }

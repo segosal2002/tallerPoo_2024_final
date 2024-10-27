@@ -4,6 +4,8 @@
  */
 package org.example.Vista;
 
+import javax.swing.JOptionPane;
+import org.example.Controlador.Verificaciones;
 import org.example.Modelos.Cliente;
 import org.example.Modelos.TipoSexo;
 
@@ -60,14 +62,30 @@ public class Registrarse extends javax.swing.JFrame {
                 nombreActionPerformed(evt);
             }
         });
+        nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nombreKeyTyped(evt);
+            }
+        });
 
         jLabel3.setText("Correo electrónico");
 
-<<<<<<< Updated upstream
+
         jLabel4.setText("Número de teléfono");
-=======
-        jLabel4.setText("Numero de teléfono");
->>>>>>> Stashed changes
+
+        numeroTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numeroTelActionPerformed(evt);
+            }
+        });
+        numeroTel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numeroTelKeyTyped(evt);
+            }
+        });
+
+
+
 
         jLabel5.setText("Contraseña");
 
@@ -87,15 +105,15 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< Updated upstream
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/example/Vista/imagenes/OIG1-removebg-preview-removebg-p.png"))); // NOI18N
+
+  
 
         jLabel7.setText("¿Ya tiene una cuenta?");
-=======
-        jLabel6.setText("¿Ya tiene una cuenta?");
+
+   
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/example/Vista/imagenes/Delicias gourmet(200x200).png"))); // NOI18N
->>>>>>> Stashed changes
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +123,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream
+
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(181, 181, 181)
@@ -129,7 +147,7 @@ public class Registrarse extends javax.swing.JFrame {
                                 .addGap(99, 99, 99)
                                 .addComponent(jLabel6)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-=======
+
                         .addGap(181, 181, 181)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
@@ -145,16 +163,16 @@ public class Registrarse extends javax.swing.JFrame {
                             .addComponent(correo, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                             .addComponent(contrasenia))
                         .addGap(27, 27, 27)
->>>>>>> Stashed changes
+
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(108, 108, 108))
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream
+
                         .addComponent(jLabel7)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-=======
+
                         .addGap(269, 269, 269)
                         .addComponent(jToggleButton1))
                     .addGroup(layout.createSequentialGroup()
@@ -167,12 +185,12 @@ public class Registrarse extends javax.swing.JFrame {
                                 .addComponent(jLabel7))
                             .addComponent(jLabel6))))
                 .addContainerGap(96, Short.MAX_VALUE))
->>>>>>> Stashed changes
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream
+
                 .addGap(23, 23, 23)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -189,10 +207,10 @@ public class Registrarse extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
-=======
+
                 .addGap(30, 30, 30)
                 .addComponent(jLabel6)
->>>>>>> Stashed changes
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -213,7 +231,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numeroTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< Updated upstream
+
                 .addGap(18, 18, 18)
                 .addComponent(jToggleButton1)
                 .addGap(33, 33, 33))
@@ -225,7 +243,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton1)
                 .addGap(18, 18, 18))
@@ -233,7 +251,7 @@ public class Registrarse extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addComponent(jLabel7)
                 .addContainerGap(205, Short.MAX_VALUE))
->>>>>>> Stashed changes
+
         );
 
         pack();
@@ -246,6 +264,7 @@ public class Registrarse extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
       //recursos
       TipoSexo sexo;
+      Verificaciones veri=new Verificaciones();
      
       //Extraemos las variables del panel de registrarse
       String Nombre=nombre.getText();
@@ -253,6 +272,17 @@ public class Registrarse extends javax.swing.JFrame {
       String NumTel=numeroTel.getText();
       String Contrasenia=contrasenia.getText();
      int tipoSexo=jComboBox1.getSelectedIndex();
+     
+     
+     if(jButton1.isEnabled() && Nombre.isBlank() || Correo.isBlank() || NumTel.isBlank() || Contrasenia.isBlank()  ){
+      
+      
+        JOptionPane.showMessageDialog(null, "Error campos vacios", "Mensaje", JOptionPane.ERROR_MESSAGE);
+      
+      
+      }
+     
+     else if (veri.ValidarCorreo(Correo)){
     
      switch (tipoSexo){
      
@@ -286,9 +316,10 @@ public class Registrarse extends javax.swing.JFrame {
          cliente.Registrarse(Nombre, Correo, NumTel, Contrasenia, sexo);
 
      
+        JOptionPane.showMessageDialog(null, "Registrado con exito, inicie sesion porfavor", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
      
-     
-     
+}
      
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -299,9 +330,32 @@ public class Registrarse extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton1ActionPerformed
 
+
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void numeroTelKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroTelKeyTyped
+       char c = evt.getKeyChar();
+if (!Character.isDigit(c)) {
+    evt.consume(); 
+}
+           
+       
+      
+       
+    }//GEN-LAST:event_numeroTelKeyTyped
+
+    private void nombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyTyped
+         char c=evt.getKeyChar();
+       
+       if(c<'0' || c < '9') evt.consume();
+    }//GEN-LAST:event_nombreKeyTyped
+
+    private void numeroTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroTelActionPerformed
+
 
     /**
      * @param args the command line arguments

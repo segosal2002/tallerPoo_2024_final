@@ -4,8 +4,12 @@
  */
 package org.example.Vista;
 
+import jdk.jshell.execution.Util;
+import org.example.Controlador.Utilidades;
 import org.example.Controlador.Verificaciones;
+import org.example.Modelos.Admin;
 import org.example.Modelos.Cliente;
+import org.example.Modelos.Empleado;
 
 /**
  *
@@ -63,12 +67,9 @@ public class InciarSesion extends javax.swing.JFrame {
 
         jLabel3.setText("¿No tiene una cuenta?");
 
-<<<<<<< Updated upstream
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/example/Vista/imagenes/OIG1-removebg-preview-removebg-p.png"))); // NOI18N
-=======
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/example/Vista/imagenes/Delicias gourmet(200x200).png"))); // NOI18N
         jLabel4.setText("jLabel4");
->>>>>>> Stashed changes
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -77,14 +78,12 @@ public class InciarSesion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream
+
                         .addGap(256, 256, 256)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(311, 311, 311)
-=======
-                        .addGap(244, 244, 244)
->>>>>>> Stashed changes
+
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -92,14 +91,14 @@ public class InciarSesion extends javax.swing.JFrame {
                         .addGap(235, 235, 235)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Contrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< Updated upstream
+
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(325, 325, 325)
                         .addComponent(jButton2)))
                 .addContainerGap(323, Short.MAX_VALUE))
-=======
+
                             .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel3)
@@ -111,15 +110,26 @@ public class InciarSesion extends javax.swing.JFrame {
                         .addGap(200, 200, 200)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(208, Short.MAX_VALUE))
->>>>>>> Stashed changes
+
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2)))
+                .addContainerGap(278, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream
+
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
+
+                .addGap(19, 19, 19)
+                .addComponent(jButton2)
+                .addGap(61, 61, 61)
+
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,7 +144,7 @@ public class InciarSesion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addContainerGap(113, Short.MAX_VALUE))
-=======
+
                 .addGap(56, 56, 56)
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -147,24 +157,26 @@ public class InciarSesion extends javax.swing.JFrame {
                 .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addGap(25, 25, 25))
->>>>>>> Stashed changes
+
+                .addContainerGap(84, Short.MAX_VALUE))
+
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
         
         //recursos
         Verificaciones verificacion=new Verificaciones();
-        PanelUsuario panelUsuario=new PanelUsuario();
-            
+        Utilidades util=new Utilidades();
         
         
         //Extraemos los datos del formulario
@@ -172,25 +184,51 @@ public class InciarSesion extends javax.swing.JFrame {
         
       String correo=Correo.getText();
       String contrasenia=Contrasenia.getText();
-      Cliente cliente=new Cliente(correo,contrasenia);
-       
-     if(verificacion.VerificacionInciarSesion(cliente)){
-     
-         panelUsuario.setVisible(true);
-         this.dispose();
-     
-     
-     }else{
-     System.out.println("Pruebe con otros datos, o registrarse");
-     }
-     
       
-      
+      //creamos el objecto cliente
+        Cliente cliente=new Cliente(correo,contrasenia);
+        
+        
+        
+        
+       //para pasarle el dato a la reserva
+        Cliente cliente1=new Cliente(correo);
+        PanelUsuario panelUsuario=new PanelUsuario(cliente1);
+        Admin admin=new Admin();
+        
+        
+
+
+        if(admin.inciarSesion(util.listaEmpleados(),correo,contrasenia)){
+            PanelAdmin panelAdmin = new PanelAdmin();
+            panelAdmin.setVisible(true);
+            this.dispose();
+        }
+        if(verificacion.VerificacionInciarSesion(cliente)){
+
+            panelUsuario.setVisible(true);
+            panelUsuario.setDatos(correo);
+            this.dispose();
+        }
+        else {
+            System.out.println("Pruebe con otros datos, o registrarse");
+        }
+
+
+
+
+
+
+
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Registrarse registrarse=new Registrarse();
         registrarse.setVisible(true);
+       
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
