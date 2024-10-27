@@ -164,6 +164,7 @@ public class Admin  extends  Empleado{
 
 
     }
+
     
    public void cancelarEvento(Reserva reserva){
 
@@ -228,4 +229,5 @@ public class Admin  extends  Empleado{
 
 
    }
+
 }

@@ -43,10 +43,14 @@ public class Fechas {
 
     }
 
+
     /**
      @param  fecha parsea una fecha Date a un LocalDate
      @return retorna el date en formato LocalDate
      */
+
+
+
     public LocalDate ParseadorDateAFecha(Date fecha) {
 
         if (fecha == null) {
@@ -59,10 +63,12 @@ public class Fechas {
 
         return localDate;
     }
+
     /**
      @param  tiempo parsea un String hora a un LocalTime
      @return retorna el String en LocalTime
      */
+
 
     public LocalTime parsearStringALocalTime(String tiempo) {
 

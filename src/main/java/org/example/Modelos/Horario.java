@@ -22,11 +22,13 @@ public class Horario {
         this.horaInicio = horaInicio;
     }
 
+
     public Horario(LocalTime horaInicio,LocalTime horaFinal,LocalDate dia){
         this.horaInicio=horaInicio;
         this.horaFinal=horaFinal;
         this.dia=dia;
     }
+
 
     public Horario(){}
     public Horario(LocalDate dia, String evento, LocalTime horaInicio,LocalTime horaFinal) {

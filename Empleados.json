@@ -1,5 +1,6 @@
 [
   {
+
     "usuario": "cava1",
     "Contrasenia": "123",
     "rol": {
@@ -9,6 +10,17 @@
         "usuario": "cava1",
         "Contrasenia": "123"
       }
+
+    "fecha": "2024-10-31",
+    "hora": "11:00:00",
+    "cliente": {
+      "correo": "cava@gmail.com"
+    },
+    "mesa": {
+      "dispobinilidad": false,
+      "capacidad": 4,
+      "ubicacion": "Terraza"
+
     }
   }
 ]

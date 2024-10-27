@@ -47,7 +47,9 @@ public class Evento extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         Evento = new javax.swing.JTextField();
         Mesas = new javax.swing.JComboBox<>();
+
         jButton1 = new javax.swing.JButton();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,12 +98,14 @@ public class Evento extends javax.swing.JFrame {
 
         Mesas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ventana", "Barra", "Afuera", "Terraza" }));
 
+
         jButton1.setText("Cerrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,17 +133,23 @@ public class Evento extends javax.swing.JFrame {
                             .addComponent(Mesas, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 35, Short.MAX_VALUE)))
                 .addContainerGap())
+
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addGap(31, 31, 31)
+
+                .addGap(67, 67, 67)
+
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addComponent(jLabel2)
@@ -264,9 +274,11 @@ public class Evento extends javax.swing.JFrame {
    
     }//GEN-LAST:event_FechaSelecionadaKeyTyped
 
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -309,7 +321,10 @@ public class Evento extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Mesas;
     private javax.swing.JTextField hora1;
     private javax.swing.JTextField hora2;
+
     private javax.swing.JButton jButton1;
+
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
