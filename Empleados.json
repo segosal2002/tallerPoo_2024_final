@@ -1,38 +1,14 @@
 [
   {
-    "usuario": "cava",
-    "Contrasenia": "cava",
-    "rol": {
-      "nombreRol": "Admnistrador",
-      "descripcionRol": "Administra el sistema",
-      "empleado": {
-        "usuario": "cava",
-        "Contrasenia": "cava"
-      }
-    }
-  },
-  {
-    "usuario": "cava1",
-    "Contrasenia": "cava",
-    "rol": {
-      "nombreRol": "Admnistrador",
-      "descripcionRol": "Administra el sistema",
-      "empleado": {
-        "usuario": "cava1",
-        "Contrasenia": "cava"
-      }
-    }
-  },
-  {
-    "usuario": "cavass",
-    "Contrasenia": "cava",
-    "rol": {
-      "nombreRol": "Maitres",
-      "descripcionRol": "Levantar quejas",
-      "empleado": {
-        "usuario": "cavass",
-        "Contrasenia": "cava"
-      }
+    "fecha": "2024-10-31",
+    "hora": "11:00:00",
+    "cliente": {
+      "correo": "cava@gmail.com"
+    },
+    "mesa": {
+      "dispobinilidad": false,
+      "capacidad": 4,
+      "ubicacion": "Terraza"
     }
   }
 ]

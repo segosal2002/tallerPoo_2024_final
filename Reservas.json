@@ -1,13 +1,29 @@
 [
   {
-    "fecha": "2024-10-30",
-    "hora": "17:00:00",
+    "fecha": "2024-10-31",
+    "hora": "11:00:00",
     "cliente": {
-      "correo": "fernando@gmail.com"
+      "correo": "cava@gmail.com"
     },
     "mesa": {
       "dispobinilidad": false,
-      "capacidad": 6
+      "capacidad": 4,
+      "ubicacion": "Terraza"
+    }
+  },
+  {
+    "fecha": "2024-10-30",
+    "hora": "18:00:00",
+    "horario": {
+      "dia": "2024-10-30",
+      "evento": "cumpleaños 18:00",
+      "horaInicio": "18:00:00",
+      "horaFinal": "20:00:00"
+    },
+    "mesa": {
+      "dispobinilidad": false,
+      "capacidad": 0,
+      "ubicacion": "Terraza"
     }
   }
 ]
