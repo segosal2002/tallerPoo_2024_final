@@ -4,6 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
+/**
+ * La clase Reserva representa una reserva en un restaurante,
+ * incluyendo detalles sobre el cliente, la fecha, la hora, la mesa,
+ * y otros aspectos relevantes para la gestión de la reserva.
+ */
 public class Reserva {
     private LocalDate fecha;
     private LocalTime hora;

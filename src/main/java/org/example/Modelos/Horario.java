@@ -4,7 +4,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Representa el horario de un evento en un restaurante, incluyendo la fecha, el nombre del evento,
+ * la hora de inicio y finalización, las reservas y el restaurante asociado.
+ */
 public class Horario {
     private LocalDate dia;
     private String evento;

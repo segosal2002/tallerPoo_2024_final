@@ -14,7 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.example.Controlador.Verificaciones;
-
+/**
+ * La clase  Cliente  representa un cliente
+ * de un restaurante
+ */
 public class Cliente {
     private String nombre;
     private String correo;
@@ -124,7 +127,15 @@ public class Cliente {
     public void setMaitre(Maitre maitre) {
         this.maitre = maitre;
     }
-
+    /**
+     * Registra un nuevo cliente en el sistema, verificando que el correo electrónico no esté repetido.
+     *
+     * @param Nombre      El nombre del cliente.
+     * @param Correo      El correo electrónico del cliente.
+     * @param NumTel      El número de teléfono del cliente.
+     * @param Contrasenia La contraseña del cliente.
+     * @param Sexo        El sexo del cliente.
+     */
     public void Registrarse(String Nombre, String Correo, String NumTel, String Contrasenia, TipoSexo Sexo){
 
     //recursos
@@ -184,7 +195,11 @@ public class Cliente {
 
 
 
-}
+}/**
+     * Registra una nueva reserva para el cliente en el sistema, guardándola en un archivo JSON.
+     *
+     * @param reserva La reserva a ser registrada.
+     */
     public void reservar(Reserva reserva){
     
         //recursos

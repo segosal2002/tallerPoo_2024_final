@@ -111,11 +111,8 @@ public class PanelAdmin extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
 
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE).addContainerGap(144, Short.MAX_VALUE)));
 
-                .addContainerGap(144, Short.MAX_VALUE))
-
-        );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()

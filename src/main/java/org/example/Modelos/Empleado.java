@@ -1,6 +1,10 @@
 package org.example.Modelos;
 
 import java.util.List;
+/**
+ * La clase  Empleado  representa un empleado
+ * de un restaurante
+ */
 
 public class Empleado {
     private String usuario;
@@ -23,7 +27,14 @@ public class Empleado {
     public Empleado() {
 
     }
-
+    /**
+     * Verifica si un empleado puede iniciar sesión comprobando su correo electrónico y contraseña.
+     *
+     * @param empleados   Lista de empleados registrados en el sistema.
+     * @param correo      El correo electrónico ingresado por el empleado.
+     * @param contrasenia La contraseña ingresada por el empleado.
+     * @return true si el correo electrónico y la contraseña coinciden con un empleado en la lista;  false en caso contrario.
+     */
     public boolean inciarSesion(List<Empleado> empleados,String correo,String contrasenia){
 
         for(Empleado empleado : empleados){

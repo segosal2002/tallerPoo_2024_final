@@ -1,7 +1,10 @@
 package org.example.Modelos;
 
 import java.util.ArrayList;
-
+/**
+ * La clase Recepcionista representa a un empleado específico encargado de la recepción en un restaurante,
+ * gestionando los clientes y las reservas que estos han realizado. Extiende la clase Empleado.
+ */
 public class Recepcionista  extends  Empleado {
 private Cliente cliente;
 private ArrayList<Reserva>Reservas;

@@ -12,6 +12,11 @@ private int cvv;
 private Date FechaVencimiento;
 private double saldo;
 private ArrayList<TarjetaCredito>Reservas;
+    /**
+     * La clase TarjetaCredito representa una tarjeta de crédito utilizada para realizar reservas
+     * en el sistema. Incluye información como el número de la tarjeta, el emisor, el titular,
+     * la fecha de vencimiento, el saldo disponible, y el CVV.
+     */
 
     public TarjetaCredito(int cvv, String emisor,Date fechaVencimiento, ArrayList<TarjetaCredito> reservas, String nombreTitular, int numeroTarjeta, double saldo) {
         this.cvv = cvv;
