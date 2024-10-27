@@ -97,4 +97,52 @@ public class Admin  extends  Empleado{
     public boolean inciarSesion(List<Empleado> empleados, String correo, String contrasenia) {
         return super.inciarSesion(empleados, correo, contrasenia);
     }
+
+    public void setEventoPrivado(Reserva reserva){
+
+        Gson gson = new GsonBuilder().setPrettyPrinting()
+                .registerTypeAdapter(LocalDate.class, new Adaptadores.LocalDateAdapter())
+                .registerTypeAdapter(LocalTime.class, new Adaptadores.LocalTimeAdapter())
+                .create();
+
+
+        Utilidades util = new Utilidades();
+        String json = "";
+      Reserva [] reservas = new Reserva[0];
+        Verificaciones verificacion=new Verificaciones();
+
+        //metodo
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(util.rutarReservas()));
+            String linea = "";
+            while ((linea = br.readLine()) != null) {
+                json += linea;
+            }
+            br.close();
+
+            if (!json.isEmpty()) {
+                reservas = gson.fromJson(json,Reserva[].class);
+            }
+        } catch (Exception e) {
+            System.out.println("Error al cargar admin.EventoPrivado " + e.getMessage());
+        }
+
+       Reserva RerservaNueva = new Reserva(reserva.getFecha(),reserva.getHora(),reserva.getMesa(),reserva.getHorario());
+
+        List<Reserva> ListaReserva = new ArrayList<>(Arrays.asList(reservas));
+        ListaReserva.add(RerservaNueva);
+
+        try {
+                FileWriter writer = new FileWriter(util.rutarReservas());
+                gson.toJson(ListaReserva, writer);
+                writer.flush();
+                writer.close();
+                System.out.println("Registro existoso de de admin.SetEventoPrivado ");
+
+        } catch (Exception e) {
+            System.out.println("Error al registrar admin.SetEventoPrivado" + e.getMessage());
+        }
+
+
+    }
 }

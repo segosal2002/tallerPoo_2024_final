@@ -15,6 +15,7 @@ public class Reserva {
     private Cliente cliente;
     private Mesa mesa;
 
+
     public Reserva(String alergias, String concurrio, Cliente cliente , LocalDate fecha, LocalTime hora, Horario horario, Mesa mesa, Recepcionista recepcionista, TarjetaCredito tarjetaCredito) {
         this.alergias = alergias;
         this.concurrio = concurrio;
@@ -26,7 +27,17 @@ public class Reserva {
         this.recepcionista = recepcionista;
         this.tarjetaCredito = tarjetaCredito;
     }
+
+
+
     public Reserva(){
+    }
+
+    public Reserva(LocalDate fecha,LocalTime hora,Horario horario,Mesa mesa){
+        this.fecha = fecha;
+        this.hora = hora;
+        this.horario = horario;
+        this.mesa = mesa;
     }
     public Reserva(LocalDate fecha,LocalTime hora,Mesa mesa,Cliente cliente){
             this.fecha=fecha;
@@ -40,6 +51,16 @@ public class Reserva {
          this.fecha=fecha;
             this.hora=hora;
             this.mesa=mesa;
+    }
+
+    public Reserva(LocalDate fecha,LocalTime hora,Mesa mesa,Horario horario){
+        this.fecha=fecha;
+        this.hora=hora;
+
+        this.mesa=mesa;
+        this.horario=horario;
+
+
     }
 
     public LocalDate getFecha() {
@@ -128,4 +149,5 @@ public class Reserva {
                 ", mesa=" + mesa +
                 '}';
     }
+
 }
